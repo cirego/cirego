@@ -1,0 +1,30 @@
+VERSION 0.7
+FROM python:3.11-slim
+WORKDIR /pages
+
+build:
+    BUILD +lint
+    FROM +deps
+    COPY --dir content .
+    COPY mkdocs.yml .
+    RUN mkdocs build
+    SAVE ARTIFACT site /site
+
+deps:
+    RUN apt-get update && apt-get install -y curl
+    COPY resources/requirements.txt .
+    RUN pip3 install -r requirements.txt
+    SAVE IMAGE
+
+develop:
+    FROM +deps
+    ARG --required EXPECTED_REF
+    COPY --dir content .
+    COPY mkdocs.yml .
+    SAVE IMAGE ${EXPECTED_REF}
+
+lint:
+    FROM ruby:3.0.2-alpine3.14
+    RUN gem install mdl
+    COPY --dir content .
+    RUN mdl content

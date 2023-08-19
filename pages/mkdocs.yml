@@ -1,0 +1,47 @@
+copyright: 'Copyright &copy, 2023 Chris Golden'
+
+dev_addr: '0.0.0.0:8000'
+
+docs_dir: 'content'
+
+edit_uri: 'edit/main/pages/content'
+
+markdown_extensions:
+    - admonition
+    - toc:
+        permalink: true
+    - footnotes
+
+site_name: Chris Golden's Personal Blog
+
+nav:
+    - Home:
+        - index.md
+plugins:
+    - search
+
+repo_url: 'https://github.com/cirego/cirego'
+
+site_description: 'A collection of things that I find interesting to write about'
+
+site_author: 'Chris Golden'
+
+theme:
+    features:
+        - tabs
+    name: 'material'
+    palette:
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          accent: blue
+          primary: black
+          toggle:
+            icon: material/brightness-4
+            name: Switch to dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          accent: blue
+          primary: black
+          toggle:
+            icon: material/brightness-7
+            name: Switch to light mode
