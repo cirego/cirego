@@ -16,7 +16,9 @@ customers happy, be they internal or external.
 
 ## Past Experience
 
-### Lacework -- 2021 - Present
+### Roblox -- 2023 - Present
+
+### Lacework -- 2021 - 2023
 
 Joined Lacework as part of the agent team, focused on deployments (Helm, Apt, Ansible, etc).
 Founded and led new team called Agent Scale. Defined mission/vision/roadmap for the team and
